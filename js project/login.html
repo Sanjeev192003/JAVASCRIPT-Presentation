@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login  MyFlip</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+<body class="bg-light">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Dandu shop</a>
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+     
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+      
+          <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="container mt-5">
+    <div class="card p-4 shadow w-50 mx-auto">
+      <h2 class="text-center">Login</h2>
+      <form id="login-form">
+        <input type="email" id="login-email" class="form-control mb-3" placeholder="Email" required />
+        <input type="password" id="login-password" class="form-control mb-3" placeholder="Password" required />
+        <button type="submit" class="btn btn-success w-100">Login</button>
+      </form>
+      <p id="login-msg" class="text-danger mt-3 text-center"></p>
+      <p class="text-center mt-2">Don't have an account? <a href="signup.html">Sign up here</a></p>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('login-form').addEventListener('submit', function(event) {
+      event.preventDefault(); 
+      
+      const emailInput = document.getElementById('login-email');
+      const passwordInput = document.getElementById('login-password');
+      const message = document.getElementById('login-msg');
+      
+     
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      
+      if (!emailPattern.test(emailInput.value)) {
+        message.textContent = "Please enter a valid email address.";
+        emailInput.focus();
+        return;
+      }
+      
+      if (passwordInput.value.trim() === '') {
+        message.textContent = "Please enter your password.";
+        passwordInput.focus();
+        return;
+      } 
+      message.textContent = "";
+      
+      alert('Login successfully!');
+
+    });
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,34 @@
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  color: green;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.carousel img {
+  height: 400px;
+  object-fit: cover;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: green;
+  color: white;
+}
+
+body.dark-mode .navbar {
+  background-color: #222 !important;
+}
+
+body.dark-mode .card {
+  background-color: #1e1e1e;
+  color:white;
+}
+.navbar-brand{
+  padding-left: 5%;
+}
